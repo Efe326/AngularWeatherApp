@@ -1,13 +1,12 @@
 <div class="container">
   <div class="upper-data">
-   <img src="../assets/sunny.jpeg" *ngIf="14 > 15">
-   <img src="../assets/chill.jpeg" *ngIf="14 <= 15">
-  
-   <div class="weather-data">
-    <div class="location">Istanbul</div>
-    <div class="temperature">{{ 14.40 | number: '1.0-0'}}°C</div>
-   </div>
+    <img src="../assets/sunny.jpeg" *ngIf="currentTemperature > 15">
+    <img src="../assets/chill.jpeg" *ngIf="currentTemperature <= 15">
 
+    <div class="weather-data">
+      <div class="location">{{ cityName }}</div>
+      <div class="temperature">{{ currentTemperature | number: '1.0-0'}}°C</div>
+    </div>
   </div>
 
   <div class="lower-data">
@@ -21,7 +20,7 @@
           <span>min</span>
         </div>
         <div class="info-block-value">
-          10°C
+          {{ minTemperature }}°C
         </div>
       </div>
 
@@ -31,7 +30,7 @@
           <span>high</span>
         </div>
         <div class="info-block-value">
-          21°C
+          {{ maxTemperature }}°C
         </div>
       </div>
 
@@ -41,22 +40,20 @@
           <span>humidity</span>
         </div>
         <div class="info-block-value">
-          52%
+          {{ humidity }}%
         </div>
       </div>
 
       <div class="info-block">
         <div class="info-block-label">
           <img src="../assets/wind.png">
-          <span>min</span>
+          <span>wind</span>
         </div>
         <div class="info-block-value">
-          10 km/h
+          {{ windSpeed }} km/h
         </div>
       </div>
-
     </div>
-    
   </div>
 </div>
 
